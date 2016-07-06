@@ -47,6 +47,6 @@ http_basic_authenticate_with name: "heezmagnif", password: "kelly4", except: [:i
 
   private
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :image_url)
   end
 end
