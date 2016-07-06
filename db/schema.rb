@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160705173534) do
     t.string   "commenter"
     t.text     "body"
     t.integer  "article_id"
+    t.string   "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

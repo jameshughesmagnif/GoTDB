@@ -1,3 +1,4 @@
+<div class="character">
 <p>
   <strong>House:</strong>
   <%= @article.title %>
@@ -8,7 +9,7 @@
   <%= @article.text %>
 </p>
 
-<h2>Comments</h2>
+<h2>Characters</h2>
 <%= render @article.comments %>
 
 
@@ -18,3 +19,4 @@
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+</div>
