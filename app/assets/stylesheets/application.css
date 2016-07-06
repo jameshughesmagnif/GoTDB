@@ -12,6 +12,10 @@ body {
   margin: 0px 70px;
   }
 
+.block {
+margin-left: 200px;
+}
+
 .bio {
   font-size: 25px;
   margin: 0px 70px;
@@ -27,7 +31,7 @@ body {
 
 .pic {
   margin-left: auto;
-  margin-right: 600px;
+  margin-right: 800px;
   max-width: 80px;
 
 }

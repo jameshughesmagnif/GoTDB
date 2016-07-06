@@ -5,7 +5,7 @@
 
 
   </tr>
-
+<div class="block">
   <% @articles.each do |article| %>
     <tr>
       <td><%= link_to article.title, article_path(article) %></td>
@@ -16,6 +16,7 @@
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>
+  </div>
   <% end %>
   <%= link_to 'Add House', new_article_path %>
 </table>
