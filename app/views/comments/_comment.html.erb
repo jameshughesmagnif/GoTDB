@@ -1,10 +1,15 @@
-<p>
-  <strong>Character:</strong>
+<p class="charactername">
+
   <%= comment.commenter %>
 </p>
 
-<p>
-  <strong>Bio:</strong>
+<p class="pic">
+  <!-- <img class="pic" src="<%= comment.image_url %>"/> -->
+  <%= image_tag(comment.image_url) %>
+</p>
+
+<p class="bio"> 
+
   <%= comment.body %>
 </p>
 
