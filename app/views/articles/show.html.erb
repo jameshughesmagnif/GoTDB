@@ -6,12 +6,11 @@
   <%= @article.title %>
 </p>
 
-<p>
-
-  <%= @article.text %>
+<p class="body">
+ <%= @article.text %>
 </p>
 
-<h2>Characters</h2>
+<h2 class="character_head">Characters</h2>
 <%= render @article.comments %>
 
 

@@ -1,13 +1,14 @@
-<h1>Houses of Westeros</h1>
+<h1 class="transparent">Houses of Westeros</h1>
 
-<table>
+<table class="block">
   <tr>
 
 
   </tr>
-<div class="block">
+
   <% @articles.each do |article| %>
     <tr>
+      <div class="links">
       <td><%= link_to article.title, article_path(article) %></td>
 
 
@@ -15,8 +16,10 @@
       <td><%= link_to 'Delete', article_path(article),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
+            </div>
     </tr>
-  </div>
   <% end %>
+  <div class="addHouse">
   <%= link_to 'Add House', new_article_path %>
+</div>
 </table>
