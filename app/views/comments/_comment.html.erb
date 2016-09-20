@@ -8,13 +8,16 @@
   <%= image_tag(comment.image_url) %>
 </p>
 
-<p class="bio"> 
+<p class="bio">
 
   <%= comment.body %>
 </p>
 
 <p>
+  <% if comment.user == current_user %>
   <%= link_to 'Delete Character', [comment.article, comment],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+               data: { confirm: 'Are you sure?' },
+               class: 'btn btn-danger' %>
+<% end %>
 </p>

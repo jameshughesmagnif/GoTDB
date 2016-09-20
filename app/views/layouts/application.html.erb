@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GameOfThrones</title>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+  <title>Game of Thrones DB</title>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'> -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <title>Game of Thrones DB</title>
 </head>
 <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <% if user_signed_in? %>
 
+  <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: 'btn btn-danger' %>
+
+<% else %>
+
+  <%= link_to "Sign In", new_user_session_path, class: 'btn btn-success' %>
+
+<% end %>
+  <%= link_to "Register", new_user_registration_path, class: 'btn btn-success' %>
 <%= yield %>
 
 </body>

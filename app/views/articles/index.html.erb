@@ -1,25 +1,30 @@
-<h1 class="transparent">Houses of Westeros</h1>
+<div class="transparent">
+  <div class="jumbotron">
+    <h1>
+      Houses of Westeros
+    </h1>
+  </div>
+</div>
 
-<table class="block">
-  <tr>
-
-
-  </tr>
+<div id="main-container" class="container">
+  <div class="row">
+    <table>
 
   <% @articles.each do |article| %>
-    <tr>
-      <div class="links">
-      <td><%= link_to article.title, article_path(article) %></td>
 
 
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Delete', article_path(article),
+      <%= link_to article.title, article_path(article), class: 'articles' %>
+
+<% if article.user == current_user %>
+      <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-default' %>
+      <%= link_to 'Delete', article_path(article),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-            </div>
-    </tr>
+              data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+<% end %>
+    </table>
   <% end %>
-  <div class="addHouse">
-  <%= link_to 'Add House', new_article_path %>
 </div>
-</table>
+  <div class="addHouse">
+  <%= link_to 'Add House', new_article_path, class: 'btn btn-success' %>
+</div>
+</div>

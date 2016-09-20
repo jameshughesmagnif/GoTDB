@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
-
-http_basic_authenticate_with name: "heezmagnif", password: "kelly4", except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @articles = Article.all
@@ -11,7 +10,7 @@ http_basic_authenticate_with name: "heezmagnif", password: "kelly4", except: [:i
   end
 
   def new
-    @article = Article.new
+    @article = current_user.articles.build
   end
 
   def edit
@@ -19,7 +18,7 @@ http_basic_authenticate_with name: "heezmagnif", password: "kelly4", except: [:i
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
 
     if @article.save
       redirect_to @article
@@ -39,7 +38,7 @@ http_basic_authenticate_with name: "heezmagnif", password: "kelly4", except: [:i
   end
 
   def destroy
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
     @article.destroy
 
     redirect_to articles_path
